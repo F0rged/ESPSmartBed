@@ -9,13 +9,13 @@ https://everythingsmarthome.co.uk/howto/building-a-bed-occupancy-sensor-for-home
 
 ![Custom Bed with WS2812B LEDs](/Photos/20210827_151237.jpg)
 
-![Circuit Board](/photos/20210920_184517.jpg)
+![Circuit Board](/Photos/20210920_184517.jpg)
 
-![Case](/photos/20211001_162814.jpg)
+![Case](/Photos/20211001_162814.jpg)
 
-![Case Mounted](/photos/20211001_165858.jpg)
+![Case Mounted](/Photos/20211001_165858.jpg)
 
-![Final Result](/photos/20210828_215434.jpg)
+![Final Result](/Photos/20210828_215434.jpg)
 
 
 
