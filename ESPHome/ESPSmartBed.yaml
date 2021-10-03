@@ -1,0 +1,83 @@
+
+light:
+  - platform: fastled_clockless
+    chipset: WS2812B
+    pin: D4
+    num_leds: 22
+    rgb_order: GRB
+    name: "Master Bed Light"
+    id: masterbedlight
+    effects:
+      - addressable_rainbow:
+          name: Rainbow Effect With Custom Values
+          speed: 10
+          width: 50
+      - addressable_lambda:
+          name: SideA
+          update_interval: 50ms
+          lambda: |-
+            //Define Variables
+            static uint16_t progress = 8;
+          
+            //set all to black initially
+            if (initial_run) {
+              progress = 8;
+              it.all() = Color::BLACK;
+            } else if (progress < 22){
+              it[progress] = Color::WHITE;
+              progress++;
+            } else {
+              return;
+            }
+      - addressable_lambda:
+          name: SideB
+          update_interval: 100ms
+          lambda: |-
+            //Define Variables
+            static uint16_t progress = 0;
+          
+            //set all to black initially
+            if (initial_run) {
+              progress = 0;
+              it.all() = Color::BLACK;
+            } else if (progress == 7){
+              it[progress] = Color::WHITE;
+              progress = 21;
+            } else if (progress == 16){
+              it[progress] = Color::WHITE;
+              progress = 99;
+              return;
+            } else if (progress == 99){
+              return;
+            } else if (progress > 16){
+              it[progress] = Color::WHITE;
+              progress--;
+            } else if (progress < 7){
+              it[progress] = Color::WHITE;
+              progress++;
+            }
+
+sensor:
+  - platform: hx711
+    name: "HX711 A"
+    dout_pin: D3
+    clk_pin: RX
+    gain: 128
+    update_interval: 1s
+    filters:
+      - calibrate_linear:
+          - 390761 -> 0
+          - 1292942 -> 178
+    unit_of_measurement: lbs
+    
+  - platform: hx711
+    name: "HX711 B"
+    dout_pin: D5
+    clk_pin: RX
+    gain: 128
+    update_interval: 1s
+    filters:
+      - calibrate_linear:
+          - 2797567 -> 0
+          - 6094847 -> 178
+    unit_of_measurement: lbs
