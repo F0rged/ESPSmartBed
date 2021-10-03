@@ -11,6 +11,8 @@ Parts List:
 - HX711 (with 4 sensors each) - can handle up to 3 (3 HX711s and 12 sensors)
 - Up to 3 MCP23008 chips for additional inputs and outputs (buttons etc)
 - Slots for 8 buttons on the board (tied into one of the MCP23008) - not tested yet.
+- 100 uF capacitor
+- barrel jack connector
 
 
 
