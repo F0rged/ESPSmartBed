@@ -1,4 +1,4 @@
-# ESPSmartBed
+# ESPSmartBed V1.0
 Smart Bed using ESP8266 and integrated scale via HX711
 Version 1.0 Notes:
 - LED resistor seems to cause issues.  Use a wire instead of a resistor.
