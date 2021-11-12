@@ -5,6 +5,7 @@ Version 1.0 Notes:
 - Some HX711 sensors seem to be defective.  Not sure how to test ahead of time...
 - circuit board can be uploaded to JLCPCB and you can order 10 for like $8 plus shipping.
 - circuit board positive and negative nets are undersized for lots of LEDs.  Should be increased in later revisions..
+- Its important for the HX711 to be close to the ESP8266 as its a high speed connection.  The strain guage sensors can be farther away, but use shielded wire.
 
 Parts List:
 - ESP8266 (Wemos D1 Mini Clone)
